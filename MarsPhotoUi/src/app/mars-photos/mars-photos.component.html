@@ -1,0 +1,19 @@
+<!-- mars-photos.component.html -->
+
+<div class="mars-photos-container">
+    <div *ngFor="let photo of marsPhotos" class="mars-photo-card">
+      <h2>{{ photo.earth_date }}</h2>
+      <div class="image-container">
+        <img [src]="photo.img_src" alt="Mars Photo">
+      </div>
+      <div class="details-container">
+        <p><strong>Rover:</strong> {{ photo.rover.name }}</p>
+        <p><strong>Camera:</strong> {{ photo.camera.full_name }}</p>
+        <!-- Add more details as needed -->
+  
+        <!-- You can format the date using Angular's built-in date pipe -->
+        <p><strong>Earth Date:</strong> {{ photo.earth_date | date: 'longDate' }}</p>
+      </div>
+    </div>
+  </div>
+  
